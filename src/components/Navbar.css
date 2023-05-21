@@ -67,8 +67,8 @@
     background-color: #195175;
     top: 0;
     left: -100%; /*-100 car caché afin de pouvoir faire une apparition par la gauche lors du click */
-    z-index: -2;
     transition: 0.4s;
+    z-index: -2;
   }
 
   .navigation.apparition {
