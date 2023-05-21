@@ -6,8 +6,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+
   return (
-    <header>
+    <div className="header">
       <Link to="/">
         <h1>HORNET STUDIO</h1>
       </Link>
@@ -38,7 +39,7 @@ const Navbar = () => {
           <FaBars className="fa-bars" />
         )}
       </div>
-    </header>
+    </div>
   );
 };
 
