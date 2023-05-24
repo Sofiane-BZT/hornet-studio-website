@@ -1,0 +1,16 @@
+.heading {
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 2rem 0;
+}
+
+/* ---------------------- MEDIA QUERIES---------------------- */
+
+@media screen and (max-width: 1250px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+}

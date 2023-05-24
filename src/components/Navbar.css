@@ -1,11 +1,11 @@
 .header {
   display: flex;
-  width: 100%;
+  width: 100vw;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem;
   border-bottom: 1px solid #195175;
-  z-index: 99;
+  /* z-index: 99; */
   height: 85px;
 }
 
@@ -62,13 +62,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #195175;
     top: 0;
-    left: -100%; /*-100 car caché afin de pouvoir faire une apparition par la gauche lors du click */
+    left: -1000%; /*-100 car caché afin de pouvoir faire une apparition par la gauche lors du click */
     transition: 0.4s;
-    z-index: -2;
   }
 
   .navigation.apparition {
@@ -91,5 +90,6 @@
 
   .hamburger {
     display: block;
+    z-index: 2;
   }
 }

@@ -1,0 +1,16 @@
+.work-container {
+  width: 85%;
+  margin: 2.5rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 0.5fr);
+  gap: 20px;
+}
+
+/* ---------------------- MEDIA QUERIES---------------------- */
+
+@media screen and (max-width: 1250px) {
+  .work-container {
+    grid-template-columns: 1fr;
+    width: 60%;
+  }
+}
