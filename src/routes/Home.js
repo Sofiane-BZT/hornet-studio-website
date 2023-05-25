@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import HomeHero from "../components/HomeHero";
 import Introduction from "../components/Introduction";
 import Achievements from "../components/Achievements";
@@ -9,7 +8,6 @@ import ContactHeadband from "../components/ContactHeadband";
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <HomeHero />
       <Introduction
         title="Notre mission"

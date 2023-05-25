@@ -2,9 +2,8 @@
   display: block;
   width: 100vw;
   height: auto;
-
   justify-content: center;
-  padding-bottom: 3rem;
+  padding: 3rem 0 5rem 0;
 }
 
 .contact-headband-message {

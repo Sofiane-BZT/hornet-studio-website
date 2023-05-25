@@ -8,10 +8,13 @@ import Faq from "./routes/Faq";
 import Contact from "./routes/Contact";
 
 import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/piercing" element={<Piercing />} />
@@ -20,6 +23,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </>
   );
 }

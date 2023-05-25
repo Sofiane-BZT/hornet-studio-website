@@ -1,0 +1,49 @@
+.footer {
+  background-color: #195175;
+  width: 100vw;
+  padding: 3rem 0;
+}
+.informations-container {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.informations-container p {
+  display: flex;
+  justify-content: center;
+  color: #ffff;
+  padding: 1.5rem 0;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.list-center li {
+  display: flex;
+  justify-content: center;
+  margin: 1.1rem auto;
+  color: #ffff;
+}
+
+.Social-networks {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 0 0 0;
+}
+
+.social-network-logo {
+  font-size: 40px;
+  color: white;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* ---------------------- MEDIA QUERIES---------------------- */
+
+@media screen and (max-width: 1250px) {
+  .informations-container {
+    grid-template-columns: 1fr;
+  }
+}
