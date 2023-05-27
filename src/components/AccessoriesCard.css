@@ -2,25 +2,41 @@
   border-radius: 10px;
   box-shadow: 5px;
   box-shadow: 1px 1px 12px #195175;
-  width: 100%;
-  margin: 30px;
+  margin: 0 6rem;
 }
 
 .card-container img {
   width: 100%;
-
   object-fit: cover;
-  transition: transform 0.8s ease;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 80%;
 }
-
 .product-details {
-  background-color: red;
+  background-color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  height: 20%;
 }
 
 .product-details > * {
   display: block;
   text-align: center;
-  padding: 1.2rem;
+  padding: 0.7rem;
+}
+
+/* ---------------------- MEDIA QUERIES---------------------- */
+
+@media screen and (max-width: 1250px) {
+  .card-container img {
+    height: 70%;
+  }
+
+  .product-details {
+    height: 30%;
+  }
+
+  .product-details > * {
+    padding: 0.2rem;
+  }
 }

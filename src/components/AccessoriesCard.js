@@ -5,8 +5,9 @@ import React from "react";
 const AccessoriesCard = (props) => {
   return (
     <div className="card-container" key={props.id}>
-      <img src={props.imgsrc} alt="accessire" />
-      <div className="product-details border-r">
+      <img src={props.imgsrc} alt="accessoire" />
+
+      <div className="product-details">
         <strong> {props.name}</strong>
         <span> {props.price}</span>
       </div>

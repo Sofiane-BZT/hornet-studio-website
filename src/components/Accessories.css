@@ -1,5 +1,23 @@
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: antiquewhite;
+  background-color: rgba(25, 81, 117, 0.1);
+  gap: 20px;
+  padding: 3rem 0;
+}
+
+.shop-category-container h2 {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ---------------------- MEDIA QUERIES---------------------- */
+
+@media screen and (max-width: 1250px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
 }

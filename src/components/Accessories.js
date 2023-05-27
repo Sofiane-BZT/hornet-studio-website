@@ -9,7 +9,7 @@ const categoriesNames = {
   decoration: "Décoration",
   ring: "bagues",
   earings: "Boucle d'oreilles",
-  bangles: "Bracelts",
+  bangles: "Bracelets",
 };
 
 const Accessories = () => {
