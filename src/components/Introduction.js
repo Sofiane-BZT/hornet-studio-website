@@ -4,7 +4,7 @@ import React from "react";
 
 const Introduction = (props) => {
   return (
-    <div className="intro-container">
+    <div className="intro-container" key={props.id}>
       <h1> {props.title} </h1>
       <p> {props.text} </p>
     </div>

@@ -4,8 +4,9 @@ import Accordion from "../components/Accordion";
 import ContactHeadband from "../components/ContactHeadband";
 import Heading from "../components/Heading";
 import { useQuery } from "graphql-hooks";
-import { FAQ_HEADING_DATA } from "../data/FaqHeadingData";
-import { FAQ_ACCORDION_DATA } from "../data/FaqAccordionData";
+import { FAQ_HEADING_DATA } from "../data/faq_data/FaqHeadingData";
+import { FAQ_ACCORDION_DATA } from "../data/faq_data/FaqAccordionData";
+import { FAQ_CONTACT_HEADBAND_DATA } from "../data/faq_data/FaqContactHeadband";
 
 const Faq = () => {
   const {
@@ -19,8 +20,15 @@ const Faq = () => {
     data: accordionData,
   } = useQuery(FAQ_ACCORDION_DATA);
 
+  const {
+    loading: contactHeadbandLoading,
+    error: contactHeadbandError,
+    data: contactHeadbandData,
+  } = useQuery(FAQ_CONTACT_HEADBAND_DATA);
+
   const [faqHeadingData, setFaqHeadingData] = useState(null);
   const [faqAccordionData, setfaqAccordionData] = useState(null);
+  const [faqContactHeadbandData, setfaqContactHeadbandData] = useState(null);
 
   useEffect(() => {
     if (headingData && !faqHeadingData) {
@@ -34,13 +42,23 @@ const Faq = () => {
     }
   }, [accordionData, faqAccordionData]);
 
+  useEffect(() => {
+    if (contactHeadbandData && !faqContactHeadbandData) {
+      setfaqContactHeadbandData(contactHeadbandData.allBandeauContactFaqs[0]);
+    }
+  }, [contactHeadbandData, faqContactHeadbandData]);
+
   try {
-    if (headingLoading || accordionLoading) return <p>Loading...</p>;
-    if (headingError || accordionError) return <p>Error :(</p>;
+    if (headingLoading || accordionLoading || contactHeadbandLoading)
+      return <p>Loading...</p>;
+    if (headingError || accordionError || contactHeadbandError)
+      return <p>Error :(</p>;
 
     return (
       <div>
-        {faqHeadingData && <Heading title={faqHeadingData.title} />}
+        {faqHeadingData && (
+          <Heading key={faqHeadingData.id} title={faqHeadingData.title} />
+        )}
 
         <div className="accordion-container">
           {faqAccordionData &&
@@ -52,7 +70,10 @@ const Faq = () => {
               />
             ))}
         </div>
-        <ContactHeadband />
+        <ContactHeadband
+          key={faqContactHeadbandData.id}
+          text={faqContactHeadbandData.text}
+        />
       </div>
     );
   } catch (error) {

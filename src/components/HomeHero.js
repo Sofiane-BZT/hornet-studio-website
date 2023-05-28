@@ -1,13 +1,13 @@
 import "./HomeHero.css";
 import React from "react";
-import HeroImg from "../assets/hero.jpg";
 
-const HomeHero = () => {
+const HomeHero = (props) => {
   return (
     <div className="hero-container">
       <img
-        src={HeroImg}
-        alt="client entrain de se faire tattouer"
+        src={props.mainHeroImg}
+        alt={props.mainHeroImgAlt}
+        key={props.id}
         className="contained-picture"
       />
     </div>

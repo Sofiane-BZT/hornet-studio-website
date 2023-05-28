@@ -5,7 +5,7 @@ import React from "react";
 const ContactHeadband = (props) => {
   return (
     <div className="contact-headband-container">
-      <p className="contact-headband-message">{props.message}</p>
+      <p className="contact-headband-message">{props.text}</p>
       <Link to="/contact" className="btn">
         Contactez-nous
       </Link>

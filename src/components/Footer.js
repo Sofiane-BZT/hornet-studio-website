@@ -1,7 +1,7 @@
 import "./Footer.css";
 import React, { useState, useEffect } from "react";
 import { useQuery } from "graphql-hooks";
-import { FOOTER_DATA } from "../data/FooterData";
+import { FOOTER_DATA } from "../data/footer_data/FooterData";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
