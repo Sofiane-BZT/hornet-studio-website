@@ -21,12 +21,24 @@
 
 /* ---------------------- MEDIA QUERIES---------------------- */
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 992px) {
   .intro-container h1 {
     font-size: 1.4rem;
+    padding: 2rem 0 1rem 0;
   }
 
   .intro-container p {
+    font-size: 1.3rem;
+    padding: 2rem 5rem;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .intro-container h1 {
     font-size: 1.1rem;
+  }
+  .intro-container p {
+    font-size: 1.1rem;
+    padding: 1rem 1rem;
   }
 }

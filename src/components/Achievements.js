@@ -1,6 +1,6 @@
 import React from "react";
 import AchievementsCard from "./AchievementsCard";
-import WorkData from "../data/WorkData";
+
 import "./Achievements.css";
 const Achievements = () => {
   return (

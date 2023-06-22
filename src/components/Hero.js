@@ -1,7 +1,7 @@
-import "./HomeHero.css";
+import "./Hero.css";
 import React from "react";
 
-const HomeHero = (props) => {
+const Hero = (props) => {
   return (
     <div className="hero-container">
       <img
@@ -14,4 +14,4 @@ const HomeHero = (props) => {
   );
 };
 
-export default HomeHero;
+export default Hero;

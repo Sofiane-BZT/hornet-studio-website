@@ -4,6 +4,8 @@ import React from "react";
 
 const AccessoriesCard = (props) => {
   return (
+    // conteneur de la carte accéssoire
+
     <div className="card-container" key={props.id}>
       <img src={props.imgsrc} alt="accessoire" />
 

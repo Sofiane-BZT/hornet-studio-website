@@ -20,11 +20,37 @@
 
 .accordion-title h3 {
   color: #ffff;
-}
-.accordion-header span {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 .accordion-content {
   padding: 10px;
+  font-size: 1.2rem;
+  overflow-wrap: break-word;
+}
+
+/* -------------------------------MEDIA QUERIES------------------------------ */
+
+@media (max-width: 992px) {
+  .accordion {
+    width: 70vw;
+  }
+  .accordion-title h3 {
+    font-size: 1.3rem;
+  }
+  .accordion-content {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    width: 85vw;
+  }
+  .accordion-title h3 {
+    font-size: 1rem;
+  }
+  .accordion-content {
+    font-size: 1rem;
+  }
 }

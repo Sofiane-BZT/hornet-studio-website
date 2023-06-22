@@ -1,6 +1,5 @@
 .heading {
   width: 100vw;
-
   display: flex;
   justify-content: center;
   text-transform: uppercase;
@@ -9,8 +8,18 @@
 
 /* ---------------------- MEDIA QUERIES---------------------- */
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 992px) {
   .heading {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .heading {
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem 3rem;
   }
 }

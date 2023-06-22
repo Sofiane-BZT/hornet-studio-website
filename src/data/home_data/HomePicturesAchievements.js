@@ -2,11 +2,11 @@
 
 export const HOME_PICTURES_ACHIEVEMENTS = `
 query {
-    allPicturesAchievementsHomePages {
+  allPicturesAchievementsHomePages {
+    homePageAchievements {
       id
-      homePageAchievements {
-        url
-        alt
-      }
+      url
+      alt
+    }
     }
   }`;
