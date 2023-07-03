@@ -10,6 +10,7 @@ import { HOME_HERO_DATA } from "../data/home_data/HomeHeroData";
 import { HOME_INTRODUCTION_DATA } from "../data/home_data/HomeIntroductionData";
 import { HOME_HEADER_ACHIEVEMENTS } from "../data/home_data/HomeHeaderAchievements";
 import { HOME_PICTURES_ACHIEVEMENTS } from "../data/home_data/HomePicturesAchievements";
+import { HOME_MSG_CONTACT } from "../data/home_data/HomeMsgContact";
 
 const Home = () => {
   // Requête pour récupérer les données du héros
@@ -43,6 +44,14 @@ const Home = () => {
     data: homePicturesAchievementsData,
   } = useQuery(HOME_PICTURES_ACHIEVEMENTS);
 
+  // Requête pour récupérer les données du message de contact à transmettre sur la page accueil
+
+  const {
+    loading: MsgContactLoading,
+    error: MsgContactError,
+    data: MsgContactData,
+  } = useQuery(HOME_MSG_CONTACT);
+
   //stockage des données récupérées
 
   const [mainHomeHeroData, setMainHomeHeroData] = useState(null);
@@ -50,6 +59,7 @@ const Home = () => {
   const [headerAchievementsData, setHeaderAchievementsData] = useState(null);
   const [picturesAchievementsData, setPicturesAchievementsData] =
     useState(null);
+  const [homeMsgContactData, setHomeMsgContactData] = useState(null);
 
   // Mise à jour des données du héros
 
@@ -89,20 +99,28 @@ const Home = () => {
     }
   }, [homePicturesAchievementsData, picturesAchievementsData]);
 
+  useEffect(() => {
+    if (MsgContactData && !homeMsgContactData) {
+      setHomeMsgContactData(MsgContactData.allBandeauMsgContacts[0]);
+    }
+  }, [MsgContactData, homeMsgContactData]);
+
   // gestion des chargement et erreurs des requêtes
   try {
     if (
       homeHeroLoading ||
       homeIntrocutionLoading ||
       homeHeaderAchievementsLoading ||
-      homePicturesAchievementsLoading
+      homePicturesAchievementsLoading ||
+      MsgContactLoading
     )
       return <p>Loading...</p>;
     if (
       homeHeroError ||
       homeIntrocutionError ||
       homeHeaderAchievementsError ||
-      homePicturesAchievementsError
+      homePicturesAchievementsError ||
+      MsgContactError
     )
       return <p>Error :(</p>;
 
@@ -137,7 +155,10 @@ const Home = () => {
               );
             })}
         </div>
-        <ContactHeadband message="Message Contact test mission Rem Maelium id Coriolanus placet num adpetentem Maelium illi Coriolano debeat amici adpetentem Vecellinum contra Vecellinum Coriolano si Coriolanus progredi habuit habuit patriam Vecellinum habuit amicos num cum Numne Coriolanus debeat adpetentem amici amicos si adpetentem num Coriolanus debuerunt id." />
+        <ContactHeadband
+          text={homeMsgContactData.message}
+          key={homeMsgContactData.id}
+        />
       </div>
     );
   } catch (error) {

@@ -26,7 +26,6 @@
 .accordion-content {
   padding: 10px;
   font-size: 1.2rem;
-  overflow-wrap: break-word;
 }
 
 /* -------------------------------MEDIA QUERIES------------------------------ */
